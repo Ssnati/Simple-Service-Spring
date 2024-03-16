@@ -16,5 +16,14 @@
     "bornIn": "Bogota",
     "randomNumber": 1,
     "nameClient": "Client 1"
+  },
+  {
+    "id": 3,
+    "firstName": "Karen",
+    "lastName": "Ruiz",
+    "dateOfBirth": "2004-03-03",
+    "bornIn": "Tunja",
+    "randomNumber": 137,
+    "nameClient": "Client 137"
   }
 ]

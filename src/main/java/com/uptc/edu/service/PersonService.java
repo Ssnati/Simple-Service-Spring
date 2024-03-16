@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+
 @Service
 public class PersonService {
     @Autowired
@@ -16,8 +17,16 @@ public class PersonService {
     }
 
     public void savePerson(Person person) {
-        List<Person> persons = new ArrayList<>(jsonFileService.loadDataFromJson());
-        persons.add(person);
-        jsonFileService.saveDataToJson(persons);
+        List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
+        person.setId(people.size() + 1);
+        people.add(validatePerson(person));
+        jsonFileService.saveDataToJson(people);
+    }
+
+    private Person validatePerson(Person person) {
+        int randomNumber = (int) (Math.random() * 1000);
+        person.setRandomNumber(randomNumber);
+        person.setNameClient("Client " + randomNumber);
+        return person;
     }
 }
