@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "firstName": "Santiago",
+    "lastName": "Orjuela",
+    "dateOfBirth": "2003-10-09",
+    "bornIn": "Tunja",
+    "randomNumber": 0,
+    "nameClient": "Client 0"
+  }
+]
