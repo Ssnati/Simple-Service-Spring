@@ -48,4 +48,10 @@ public class PersonService {
         validatePerson(person);
         savePerson(person);
     }
+
+    public Person getById(int id) {
+        List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
+        for (Person person : people) if (person.getId() == id) return person;
+        return null;
+    }
 }

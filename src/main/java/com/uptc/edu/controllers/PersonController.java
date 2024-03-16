@@ -26,7 +26,7 @@ public class PersonController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Person> getById(@PathVariable int id) {
-        return null;
+        return ResponseEntity.ok(personService.getById(id));
     }
 
     @PostMapping
