@@ -4,6 +4,7 @@ import com.uptc.edu.models.Person;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class PersonService {
@@ -15,7 +16,7 @@ public class PersonService {
     }
 
     public void savePerson(Person person) {
-        List<Person> persons = jsonFileService.loadDataFromJson();
+        List<Person> persons = new ArrayList<>(jsonFileService.loadDataFromJson());
         persons.add(person);
         jsonFileService.saveDataToJson(persons);
     }
