@@ -44,7 +44,8 @@ public class PersonService {
 
     public void createPerson(Person person) {
         List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
-        person.setId(people.size() + 1);
+        if (people.isEmpty()) person.setId(1);
+        else person.setId(people.get(people.size() - 1).getId() + 1);
         validatePerson(person);
         savePerson(person);
     }

@@ -1,20 +1,11 @@
 [
   {
-    "id": 2,
-    "firstName": "Sebastian",
-    "lastName": "Rueda",
-    "dateOfBirth": "2003-09-27",
-    "bornIn": "Bogota",
-    "randomNumber": 18,
-    "nameClient": "Client 18"
-  },
-  {
-    "id": 3,
-    "firstName": "Karen",
-    "lastName": "Ruiz",
-    "dateOfBirth": "2004-03-03",
+    "id": 1,
+    "firstName": "Santiago",
+    "lastName": "Orjuela",
+    "dateOfBirth": "2003-10-09",
     "bornIn": "Tunja",
-    "randomNumber": 137,
-    "nameClient": "Client 137"
+    "randomNumber": 655,
+    "nameClient": "Client 655"
   }
 ]
