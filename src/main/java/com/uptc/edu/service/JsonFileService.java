@@ -1,6 +1,7 @@
 package com.uptc.edu.service;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.uptc.edu.models.Person;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +17,8 @@ public class JsonFileService {
     private final String filePath = "src/main/resources/persons.json";
     private final Gson gson;
 
-    public JsonFileService(Gson gson) {
-        this.gson = gson;
+    public JsonFileService() {
+        this.gson = new GsonBuilder().setPrettyPrinting().create();
     }
 
     public List<Person> loadDataFromJson(){
