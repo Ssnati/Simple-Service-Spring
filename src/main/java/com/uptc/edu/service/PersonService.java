@@ -18,8 +18,7 @@ public class PersonService {
 
     public void savePerson(Person person) {
         List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
-        person.setId(people.size() + 1);
-        people.add(validatePerson(person));
+        people.add(person);
         jsonFileService.saveDataToJson(people);
     }
 
@@ -28,5 +27,25 @@ public class PersonService {
         person.setRandomNumber(randomNumber);
         person.setNameClient("Client " + randomNumber);
         return person;
+    }
+
+    public void editPerson(int id, Person newPerson) {
+        List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
+        for (int i = 0; i < people.size(); i++) {
+            if (people.get(i).getId() == id) {
+                newPerson.setId(id);
+                validatePerson(newPerson);
+                people.set(i, newPerson);
+                jsonFileService.saveDataToJson(people);
+                return;
+            }
+        }
+    }
+
+    public void createPerson(Person person) {
+        List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
+        person.setId(people.size() + 1);
+        validatePerson(person);
+        savePerson(person);
     }
 }

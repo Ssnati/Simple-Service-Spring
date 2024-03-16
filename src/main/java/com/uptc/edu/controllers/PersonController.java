@@ -30,14 +30,15 @@ public class PersonController {
     }
 
     @PostMapping
-    public ResponseEntity<Void> save(@RequestBody Person person) {
-        personService.savePerson(person);
+    public ResponseEntity<Void> create(@RequestBody Person person) {
+        personService.createPerson(person);
         return ResponseEntity.ok().build();
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Void> update(@PathVariable int id, @RequestBody Person person) {
-        return null;
+        personService.editPerson(id, person);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
