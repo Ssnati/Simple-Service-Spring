@@ -1,14 +1,5 @@
 [
   {
-    "id": 1,
-    "firstName": "Santiago",
-    "lastName": "Orjuela",
-    "dateOfBirth": "2003-10-09",
-    "bornIn": "Tunja",
-    "randomNumber": 948,
-    "nameClient": "Client 948"
-  },
-  {
     "id": 2,
     "firstName": "Sebastian",
     "lastName": "Rueda",

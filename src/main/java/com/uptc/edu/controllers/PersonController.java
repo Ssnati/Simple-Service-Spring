@@ -43,6 +43,7 @@ public class PersonController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> delete(@PathVariable int id) {
-        return null;
+        personService.deletePerson(id);
+        return ResponseEntity.ok().build();
     }
 }

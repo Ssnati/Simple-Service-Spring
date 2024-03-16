@@ -54,4 +54,10 @@ public class PersonService {
         for (Person person : people) if (person.getId() == id) return person;
         return null;
     }
+
+    public void deletePerson(int id) {
+        List<Person> people = new ArrayList<>(jsonFileService.loadDataFromJson());
+        people.removeIf(person -> person.getId() == id);
+        jsonFileService.saveDataToJson(people);
+    }
 }
